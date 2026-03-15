@@ -14,9 +14,12 @@ hide_st_style = """
             footer {visibility: hidden !important;}
             header {visibility: hidden !important;}
             #stDecoration {display:none !important;}
+            [data-testid="stStatusWidget"] {display:none !important;}
+            [data-testid="stHeader"] {display:none !important;}
+            [data-testid="stToolbar"] {display:none !important;}
+            .main .block-container {padding-top: 1rem !important;}
             </style>
             """
-st.markdown(hide_st_style, unsafe_allow_html=True)
 
 # --- 2. AUTOMATIC MODEL FINDER ---
 # This looks into your account and finds the right name automatically
