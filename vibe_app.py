@@ -7,6 +7,15 @@ import re
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 st.set_page_config(page_title="VIBE.CAL NUTRITION", layout="centered")
+# --- HIDE STREAMLIT BRANDING ---
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
 
 # --- 2. AUTOMATIC MODEL FINDER ---
 # This looks into your account and finds the right name automatically
