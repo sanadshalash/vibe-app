@@ -6,17 +6,7 @@ import re
 # --- 1. CONFIGURATION ---
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
-st.set_page_config(page_title="VIBE.CAL NUTRITION", layout="centered")
-# --- HIDE STREAMLIT BRANDING (POWER VERSION) ---
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden !important;}
-            footer {visibility: hidden !important;}
-            header {visibility: hidden !important;}
-            #stDecoration {display:none !important;}
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)
+st.set_page_config(page_title="VIBE.AI NUTRITION", layout="centered")
 
 # --- 2. AUTOMATIC MODEL FINDER ---
 # This looks into your account and finds the right name automatically
@@ -42,7 +32,7 @@ if 'chat_history' not in st.session_state:
 
 # --- 4. SIDEBAR: USER PROFILE & GOALS ---
 with st.sidebar:
-    st.header("👤 Your Profile")
+    st.header("Your Profile")
     age = st.number_input("Age", min_value=10, max_value=100, value=25)
     height = st.number_input("Height (cm)", min_value=100, max_value=250, value=170)
     weight = st.number_input("Current Weight (kg)", min_value=30, max_value=300, value=70)
@@ -67,7 +57,7 @@ with st.sidebar:
         st.rerun()
 
 # --- 5. THE CIRCULAR DASHBOARD ---
-st.title("VIBE.CAL NUTRITION")
+st.title("VIBE.AI NUTRITION")
 
 remaining = daily_goal - st.session_state.total_consumed
 progress_percentage = min(st.session_state.total_consumed / daily_goal, 1.0)
