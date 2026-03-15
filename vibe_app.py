@@ -1,23 +1,29 @@
 import streamlit as st
 import google.generativeai as genai
 from PIL import Image
-import re
+
+st.set_option("client.toolbarMode", "viewer")
 
 # --- 1. CONFIGURATION ---
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 st.set_page_config(page_title="VIBE.CAL NUTRITION", layout="centered")
-# --- HIDE STREAMLIT BRANDING (POWER VERSION) ---
+# --- 1. BRANDING & CLEANUP ---
 hide_st_style = """
-<style>
-/* Hide everything related to Streamlit branding */
-#MainMenu, footer, header, #stDecoration {visibility: hidden !important;}
-[data-testid="stStatusWidget"], [data-testid="stHeader"], [data-testid="stToolbar"] {display: none !important;}
-.stAppDeployButton {display: none !important;}
-.st-emotion-cache-16p6uip {display: none !important;} /* Targets the specific button container */
-button[title="View source on GitHub"] {display: none !important;}
-</style>
-"""
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            #stDecoration {display:none;}
+            [data-testid="stStatusWidget"] {display:none !important;}
+            [data-testid="stHeader"] {display:none !important;}
+            [data-testid="stToolbar"] {display:none !important;}
+            .stAppDeployButton {display:none !important;}
+            .main .block-container {padding-top: 0rem !important;}
+            /* iPad/Mobile Specific Fix */
+            div[class^="st-emotion-cache"] {pointer-events: none; display: none !important; visibility: hidden !important;}
+            </style>
+            """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
 # --- 2. AUTOMATIC MODEL FINDER ---
