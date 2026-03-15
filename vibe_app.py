@@ -39,7 +39,7 @@ with st.sidebar:
     
     st.divider()
     
-    st.header("🎯 Goals")
+    st.header("Goals")
     weight_goal = st.selectbox("I want to:", ["Lose Weight", "Maintain", "Gain Muscle"])
     speed = st.select_slider("Speed (kg per week):", options=[0.25, 0.5, 0.75, 1.0])
     
