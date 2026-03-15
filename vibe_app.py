@@ -8,17 +8,16 @@ genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 st.set_page_config(page_title="VIBE.CAL NUTRITION", layout="centered")
 # --- HIDE STREAMLIT BRANDING (POWER VERSION) ---
-hide_st_style = """
-            <style>
-            #MainMenu, footer, header, #stDecoration {display: none !important;}
-            [data-testid="stStatusWidget"], [data-testid="stHeader"], [data-testid="stToolbar"] {display: none !important;}
-            div[data-testid="stStatusWidget"] * {display: none !important;}
-            .main .block-container {padding-top: 0rem !important;}
-            .stApp [data-testid="stStatusWidget"] {display:none !important;}
-            </style>
-            """
+hide_st_style = ""
+<style>
+#MainMenu, footer, header, #stDecoration {display: none !important;}
+[data-testid="stStatusWidget"], [data-testid="stHeader"], [data-testid="stToolbar"] {display: none !important;}
+.stAppDeployButton {display:none !important;}
+.main .block-container {padding-top: 0rem !important;}
+div[data-testid="stStatusWidget"] * {display: none !important;}
+</style>
+""
 st.markdown(hide_st_style, unsafe_allow_html=True)
-
 # --- 2. AUTOMATIC MODEL FINDER ---
 # This looks into your account and finds the right name automatically
 @st.cache_resource
