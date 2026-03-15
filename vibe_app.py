@@ -10,11 +10,12 @@ st.set_page_config(page_title="VIBE.CAL NUTRITION", layout="centered")
 # --- HIDE STREAMLIT BRANDING (POWER VERSION) ---
 hide_st_style = """
 <style>
-#MainMenu, footer, header, #stDecoration {display: none !important;}
-[data-testid="stStatusWidget"] {display: none !important;}
-[data-testid="stHeader"] {display: none !important;}
-[data-testid="stToolbar"] {display: none !important;}
+/* Hide everything related to Streamlit branding */
+#MainMenu, footer, header, #stDecoration {visibility: hidden !important;}
+[data-testid="stStatusWidget"], [data-testid="stHeader"], [data-testid="stToolbar"] {display: none !important;}
 .stAppDeployButton {display: none !important;}
+.st-emotion-cache-16p6uip {display: none !important;} /* Targets the specific button container */
+button[title="View source on GitHub"] {display: none !important;}
 </style>
 """
 st.markdown(hide_st_style, unsafe_allow_html=True)
