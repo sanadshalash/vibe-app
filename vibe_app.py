@@ -19,9 +19,7 @@ hide_st_style = """
             [data-testid="stHeader"] {display:none !important;}
             [data-testid="stToolbar"] {display:none !important;}
             .stAppDeployButton {display:none !important;}
-            .main .block-container {padding-top: 0rem !important;}
-            /* iPad/Mobile Specific Fix */
-            div[class^="st-emotion-cache"] {pointer-events: none; display: none !important; visibility: hidden !important;}
+            /* Removed the aggressive container hiding to fix the blank screen */
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
