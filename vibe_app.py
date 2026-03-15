@@ -4,9 +4,9 @@ from PIL import Image
 import re
 
 # --- 1. CONFIGURATION ---
-genai.configure(api_key="AIzaSyAkZq2uRnBl6GMx778UeCJPJBCBXSMyrYQ")
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
-st.set_page_config(page_title="VIBE.AI NUTRITION", layout="centered")
+st.set_page_config(page_title="VIBE.CAL NUTRITION", layout="centered")
 
 # --- 2. AUTOMATIC MODEL FINDER ---
 # This looks into your account and finds the right name automatically
@@ -57,7 +57,7 @@ with st.sidebar:
         st.rerun()
 
 # --- 5. THE CIRCULAR DASHBOARD ---
-st.title("🥗 VIBE.AI NUTRITION")
+st.title("VIBE.CAL NUTRITION")
 
 remaining = daily_goal - st.session_state.total_consumed
 progress_percentage = min(st.session_state.total_consumed / daily_goal, 1.0)
@@ -86,7 +86,7 @@ with col2:
 st.divider()
 
 # --- 6. AI MEAL SCANNER ---
-st.subheader("📸 AI Meal Scanner")
+st.subheader("AI Meal Scanner")
 uploaded_file = st.file_uploader("Upload any photo", type=["jpg", "png", "jpeg", "webp", "heic", "tiff"])
 
 if uploaded_file:
@@ -114,7 +114,7 @@ if uploaded_file:
 st.divider()
 
 # --- 7. NUTRITION AI CHATBOT ---
-st.subheader("💬 Health & Weight Loss Coach")
+st.subheader("Health & Weight Loss Coach")
 for message in st.session_state.chat_history:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
