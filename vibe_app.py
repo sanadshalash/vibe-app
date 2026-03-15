@@ -1,22 +1,23 @@
 import streamlit as st
 import google.generativeai as genai
 from PIL import Image
-
-st.set_option("client.toolbarMode", "viewer")
-
-st.set_option("client.toolbarMode", "viewer")
+import re
 
 # --- 1. CONFIGURATION ---
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-# --- 1. BRANDING & CLEANUP ---
+
+st.set_page_config(page_title="VIBE.CAL NUTRITION", layout="centered")
+# --- HIDE STREAMLIT BRANDING (POWER VERSION) ---
 hide_st_style = """
             <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
+            #MainMenu {visibility: hidden !important;}
+            footer {visibility: hidden !important;}
+            header {visibility: hidden !important;}
+            #stDecoration {display:none !important;}
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
+
 # --- 2. AUTOMATIC MODEL FINDER ---
 # This looks into your account and finds the right name automatically
 @st.cache_resource
