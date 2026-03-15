@@ -4,6 +4,8 @@ from PIL import Image
 
 st.set_option("client.toolbarMode", "viewer")
 
+st.set_option("client.toolbarMode", "viewer")
+
 # --- 1. CONFIGURATION ---
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
