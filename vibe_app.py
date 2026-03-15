@@ -7,12 +7,13 @@ import re
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 st.set_page_config(page_title="VIBE.CAL NUTRITION", layout="centered")
-# --- HIDE STREAMLIT BRANDING ---
+# --- HIDE STREAMLIT BRANDING (POWER VERSION) ---
 hide_st_style = """
             <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
+            #MainMenu {visibility: hidden !important;}
+            footer {visibility: hidden !important;}
+            header {visibility: hidden !important;}
+            #stDecoration {display:none !important;}
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
